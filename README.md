@@ -33,3 +33,8 @@ script for filter evaluation
 
 ### `evaluation_normalization.py`
 script for normalization evaluation
+
+
+## Installation as Docker container:
+1. Execute build.sh / build.bat to build the container
+2. Execute run.sh / run.bat to start the container
