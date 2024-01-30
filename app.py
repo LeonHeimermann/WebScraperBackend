@@ -1,5 +1,4 @@
 import json
-
 from flask import Flask, request
 from flask_cors import CORS
 
@@ -56,6 +55,12 @@ def get_normalized_page():
     requested_page_url = request.args.get('normalized_page_url')
     normalized_page = app_data_handler.get_normalized_page(base_url, url_path, max_depth, max_searched_pages, requested_page_url)
     return normalized_page
+
+
+@app.errorhandler(Exception)
+def handle_error(e):
+    print(f"Error caught: {str(e)}")
+    return "Error", 500
 
 
 if __name__ == '__main__':
